@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+
+    api:
+        container_name: api-container
+        build: ./flask_api
+        restart: always
+        
+        command: uwsgi --ini app.ini
+
+        volumes: 
+            - api_data:/docker_api
+            - ./uwsgi_log:/uwsgi_log
+
+    nginx:
+        container_name: nginx-container
+        build: ./nginx
+        restart: always
+
+        ports: 
+            - "80:80"
+            
+        volumes: 
+            - api_data:/docker_api
+            - ./nginx_log:/var/log/nginx
+        depends_on: 
+            - api
+
+volumes:
+    api_data: 

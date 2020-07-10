@@ -1,0 +1,4 @@
+venv/
+__pycache__/
+nginx_log
+uwsgi_log
