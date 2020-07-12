@@ -9,9 +9,9 @@ services:
         
         command: uwsgi --ini app.ini
 
-        #把uwsgi log 拿出來
         volumes: 
             - api_data:/docker_api
+            #把uwsgi log 拿出來
             - ./uwsgi_log:/uwsgi_log
 
     nginx:
@@ -21,10 +21,10 @@ services:
 
         ports: 
             - "80:80"
-            
-        #把nginx log 拿出來    
+              
         volumes: 
             - api_data:/docker_api
+            #把nginx log 拿出來  
             - ./nginx_log:/var/log/nginx
         depends_on: 
             - api

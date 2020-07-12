@@ -18,7 +18,6 @@ def index():
 def postMethod():
     value = request.json['name']
     try:
-        print("json value : %s " %value)
         return jsonify({"status": 200, "comment": "Hello " + value})
     except:
-        return jsonify({"status": 200, "comment": "Hello " + value})
+        return jsonify({"status": 200, "comment": "ERROR"})
