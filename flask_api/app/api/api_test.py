@@ -4,12 +4,9 @@ api_test = Blueprint('api_test', __name__)
 # ***********************************************
 # Create GET http://IP:5000/
 # ***********************************************
-@api_test.route('/index',methods=['GET'])
+@api_test.route('/hi',methods=['GET'])
 def index():  
-  return """
-  <h1>Python Flask in Docker!</h1>
-  <p>A sample web-app for running Flask inside Docker.</p>
-  """
+  return "hi"
 
 # *****************************************************************************************
 # Create POST http://IP:5000/post_name
