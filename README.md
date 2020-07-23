@@ -21,7 +21,7 @@
 1. clone this repo
 
 ```bash
-git clone https://github.com/a607ernie/Flask-uWSGI-Nginx-Docker
+$git clone https://github.com/a607ernie/Flask-uWSGI-Nginx-Docker
 ```
 
 2. run container
